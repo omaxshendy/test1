@@ -8,6 +8,7 @@ class SecondScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final padding = MediaQuery.of(context).padding;
+    // Nicely implemented
     final text = ref.watch(textProvider);
     return Scaffold(
       appBar: PreferredSize(
@@ -26,6 +27,7 @@ class SecondScreen extends ConsumerWidget {
               ),
             ],
           ),
+          // Perfecto
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -42,6 +44,9 @@ class SecondScreen extends ConsumerWidget {
         children: [
           Center(
             child: Text(
+              // Nicely implemented
+              // additional enhancement use nullable operator
+              // text ?? "no text"
               text == "" ? "no text" : text,
               style: TextStyle(
                 color: Colors.greenAccent,

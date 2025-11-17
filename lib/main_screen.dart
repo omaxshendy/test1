@@ -11,14 +11,17 @@ class MainScreen extends ConsumerWidget {
     final padding = MediaQuery.of(context).padding;
     final text = ref.watch(textProvider);
     return Scaffold(
+      // Why not use AppBar Directly ?
       appBar: PreferredSize(
         preferredSize: Size.square(100),
         child: AppBar(
           title: Column(
             children: [
+              // why the column widget and the SizedBox ?
               SizedBox(height: padding.top),
               Text(
-                "IDK if this header is considred stylized",
+                // No worries it would do the job XD
+                "IDK if this header is considered stylized",
                 style: TextStyle(color: Colors.pink, fontSize: 30),
               ),
             ],
@@ -37,10 +40,15 @@ class MainScreen extends ConsumerWidget {
                 Expanded(
                   child: TextField(
                     onChanged: (value) {
+                      // Perfecto 
+                      // Nicely handled
                       ref.read(textProvider.notifier).state = value;
                     },
                   ),
                 ),
+                // we get confused sometimes it happens XD
+                // You can use spacing attribute in the Row widget
+                // spacing: 20,
                 SizedBox(width: 20),
                 Expanded(
                   child: ElevatedButton(
